@@ -1,12 +1,11 @@
 "use client"  
-
 import CardAnimatedBorderGradient from '@/components/ui/CardAnimatedBorderGradient';
 import { useSession, signIn, signOut } from "next-auth/react"; 
 
 const Login = () => {
   return (
-    <div>
-      <div>
+    <div >
+      <div >
       <div className="relative overflow-hidden group text-white text-4xl font-bold mb-10"><span className="invisible">Get Started </span><span className="absolute top-0 left-0 group-hover:-translate-y-full transition-transform ease-in-out duration-500 hover:duration-300">Get Started </span><span className="absolute top-0 left-0 translate-y-full group-hover:translate-y-0 transition-transform ease-in-out duration-500 hover:duration-300">Get Started </span></div>
       </div>
         
@@ -92,7 +91,7 @@ const Login = () => {
                 <span>Continue with Facebook</span>
             </button>
 
-            <button
+            <button onClick={() => signIn("github")}
                 className="flex items-center bg-black text-white border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium  hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                 <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                     viewBox="0 0 73 73" version="1.1">
