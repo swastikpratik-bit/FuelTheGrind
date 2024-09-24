@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <SessionWrapper>
           <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]`}
           >
               <Navbar/>
               {/* <div className="min-h-[83vh] text-white ">
@@ -43,7 +43,7 @@ export default function RootLayout({
               </div> */}
 
 
-<div className="min-h-[83vh] top-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">{children}</div>
+<div className="min-h-[83vh] top-0 z-[-2] h-full w-full ">{children}</div>
 {/* <div className="min-h-[83vh] top-0 z-[-2] h-full w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"> {children}</div> */}
               <Footer/>
           </body>

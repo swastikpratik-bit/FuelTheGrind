@@ -27,7 +27,7 @@ const Username : React.FC<MyComponentProps>  = ({params}) => {
           Creating a podcast with ben avery, devan costa and jace avery
         </div>
         <div className='text-slate-400'>
-          8,606 members  280 posts  $35,080/month
+          8,606 members . 280 posts . $35,080/month
         </div>  
       </div>
 
@@ -47,7 +47,24 @@ const Username : React.FC<MyComponentProps>  = ({params}) => {
         </div>
 
         <div className='makepayment w-1/2 bg-slate-800 rounded-lg p-10 text-white '>
+            <h2 className='text-2xl font-bold my-5'>Make a Payment</h2>
+            <div className='flex gap-2 py-5 flex-col'>
+              <input type="text" className='w-full p-3 rounded-lg bg-slate-700' placeholder='Enter Name'/>
+              <input type="text" className='w-full p-3 rounded-lg bg-slate-700' placeholder='Enter Message'/>
+              <input type="text" className='w-full p-3 rounded-lg bg-slate-700' placeholder='Enter Amount'/>
+              <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Pay
+              <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2 text-center items-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+              </svg>
+              </button>
+            </div>
 
+            <div className='flex gap-3'>
+              <button className='bg-slate-700 p-3 rounded-lg'>Pay $10</button>
+              <button className='bg-slate-700 p-3 rounded-lg'>Pay $20</button>
+              <button className='bg-slate-700 p-3 rounded-lg'>Pay $50</button>
+            </div>
         </div>
       </div>
     </div>
