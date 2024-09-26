@@ -1,16 +1,12 @@
-import Username from '@/app/[username]/page';
 import { connetToDatabase } from '@/lib/utils';
-import { User } from '@/models/User';
-import NextAuth, { Account, Profile } from 'next-auth'
-import { AdapterUser } from 'next-auth/adapters';
-import { CredentialInput } from 'next-auth/providers/credentials';
-import GitHubProvider from "next-auth/providers/github"
+import User  from '@/models/User';
+import NextAuth from 'next-auth';
+import GitHubProvider from "next-auth/providers/github";
 
 
 
 export const authoptions = NextAuth({
   providers: [
-    // OAuth authentication providers...
     GitHubProvider({
       clientId: process.env.GITHUB_ID!,
       clientSecret: process.env.GITHUB_SECRET!
@@ -18,26 +14,29 @@ export const authoptions = NextAuth({
   
   ],
   callbacks: {
-    async signIn({ user , account , profile , email , credentials }): Promise<string | boolean> {
+    async signIn({ user , account , profile , email , credentials }){
+      console.log(user)
       if (account?.provider === "github") {
-        await  connetToDatabase();
-        
-        const curUser = await User.findOne({email : email});
+        console.log("hai");
+        await connetToDatabase();
+        const curUser = await User.findOne({email : user.email});
         
         if(!curUser){
+
+          console.log("hai ")
           const newUser = await User.create({
             email : user.email  , 
             username : user.email?.split("@")[0],
-            name : user.name,
           })
         }
+        return true;
       }
-      return true; 
+      return true;  
     }, 
     async session({session , user , token}){
-      // console.log(session);
+
       const dbUser = await User.findOne({email : session.user?.email})
-        session.user?.name ? dbUser.username : 'Unknown';
+      session.user?.name ? dbUser.username : 'Unknown';
       return session;
     }
   }

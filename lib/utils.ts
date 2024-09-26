@@ -16,7 +16,7 @@ export const connetToDatabase =  async() => {
     const {connection} = await mongoose.connect(
       process.env.MONGO_URI  as string , 
       {
-        dbName: "/FuelTheGrind"  , 
+        dbName: "fuelthegrind"  , 
       }
     )
 
