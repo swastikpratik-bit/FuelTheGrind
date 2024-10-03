@@ -21,7 +21,7 @@ export const connetToDatabase =  async() => {
     )
 
     console.log(`Conneted to database : ${connection.host}`);
-  } catch (error) {
+  } catch {
     throw new Error("Error while connecting database");
   }
 };

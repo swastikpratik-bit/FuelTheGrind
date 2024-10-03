@@ -36,6 +36,4 @@ export const initate = async (amount : any, to_username  :any, paymentform : any
     await Payments.create({oid : x , amount : amount , to_username : to_username , name : paymentform.name , message : paymentform.message} )   ;
 
     return x; 
-
-
 }

@@ -5,6 +5,9 @@ import Razorpay from 'razorpay'
 import React, { useState } from 'react'
 
 import { useSession } from 'next-auth/react'
+import Image from 'next/image'
+
+
 
 interface MyComponentProps {
     params : {
@@ -20,9 +23,9 @@ const PaymentPage : React.FC<MyComponentProps> = ({params}) => {
     const {data : session } = useSession();
 
     interface PaymentProps {
-        name : String ;
-        message : String ; 
-        amount : String;
+        name : string ;
+        message : string ; 
+        amount : string;
     }
     
     const [paymentForm , SetPaymentForm] = useState<PaymentProps>({
@@ -36,35 +39,61 @@ const PaymentPage : React.FC<MyComponentProps> = ({params}) => {
         SetPaymentForm((prevForm) => ({ ...prevForm, [name]: value }));
     };
 
-    const pay = async(amount : any ) => {
+    const pay = async(amount : number ) => {
 
 
-        let a = await initate(amount , session?.user.name , paymentForm)    ;
-        let orderId = a.id;
+        const a = await initate(amount , session?.user?.name , paymentForm)    ;
+        const orderId = a.id;
         
-        var options : any = {
-            "key": process.env.KEY_ID, // Enter the Key ID generated from the Dashboard
-            "amount": amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-            "currency": "INR",
-            "name": "FuelTheGrind", //your business name
-            "description": "Test Transaction",
-            "image": "https://example.com/your_logo",
-            "order_id": orderId, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            "callback_url": `${process.env.URL}/api/razorpay`,
-            "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
-                "name": "Gaurav Kumar", //your customer's name
-                "email": "gaurav.kumar@example.com",
-                "contact": "9000090000" //Provide the customer's phone number for better conversion rates 
+        interface RazorpayOptions {
+            key_id: string;
+            amount: number;
+            currency: string;
+            name: string;
+            description: string;
+            image: string;
+            order_id: string;
+            callback_url: string;
+            prefill: {
+                name: string;
+                email: string;
+                contact: string;
+            };
+            notes: {
+                address: string;
+            };
+            theme: {
+                color: string;
+            };
+        }
+
+        const options: RazorpayOptions = {
+            key_id: 'YOUR_RAZORPAY_KEY_ID',
+            amount: amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            currency: "INR",
+            name: "FuelTheGrind", //your business name
+            description: "Test Transaction",
+            image: "https://example.com/your_logo",
+            order_id: orderId, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            callback_url: `${process.env.URL}/api/razorpay`,
+            prefill: { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
+                name: "Gaurav Kumar", //your customer's name
+                email: "gaurav.kumar@example.com",
+                contact: "9000090000" //Provide the customer's phone number for better conversion rates 
             },
-            "notes": {
-                "address": "Razorpay Corporate Office"
+            notes: {
+                address: "Razorpay Corporate Office"
             },
-            "theme": {
-                "color": "#3399cc"
+            theme: {
+                color: "#3399cc"
             }
         };
 
-        var rzp1 = new Razorpay(options) as any;
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        const rzp1 = new Razorpay(options);
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-ignore
         rzp1.open();
     }
     return (

@@ -1,5 +1,4 @@
 'use client';
-import { channel } from 'diagnostics_channel';
 import React, { useRef, useState } from 'react';
 
 interface Props {

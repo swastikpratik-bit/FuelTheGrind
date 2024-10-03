@@ -23,25 +23,26 @@ export default function Home() {
     </div>
 
     <div className="flex justify-center flex-col items-center gap-10 mb-10">
-      <CardSpotlight children={
+      <CardSpotlight>    
         <div className='text-sm text-gray-200 flex flex-col justify-center text-center'>
           <p className='text-sm'>SUPPORT</p>
           <h2 className='text-5xl font-bold' >Give your audience</h2>
           <h2 className='text-5xl font-bold'>an easy way to say thanks.</h2>
           <p className='text-lg'>Buy Me a Coffee makes supporting fun and easy. In just a couple of taps, your fans </p>
           <p className='text-lg'>can make the payment (buy you a coffee) and leave a message. </p>
-        </div>
-      } />
+        </div>  
+      </CardSpotlight>
 
-      <CardSpotlight children={
-        <div className='text-md bg-gradient-to-t from-gray-400 to-white bg-clip-text font-bold text-transparent  flex flex-col justify-center text-center'>
-          <p className='text-sm'>POSTS, AUDIO & EMAIL</p>
-          <h2 className='text-5xl font-bold' >Publish your best work</h2>
-          <p className='text-lg'>Buy Me a Coffee makes it easy to publish free and exclusive content. Try different</p>
-          <p className='text-lg'>formats such as audio, and make it members-only to drive more memberships. </p>
-        </div>
-      }/>
-      <CardSpotlight children={
+      <CardSpotlight>     
+          <div className='text-md bg-gradient-to-t from-gray-400 to-white bg-clip-text font-bold text-transparent  flex flex-col justify-center text-center'>
+            <p className='text-sm'>POSTS, AUDIO & EMAIL</p>
+            <h2 className='text-5xl font-bold' >Publish your best work</h2>
+            <p className='text-lg'>Buy Me a Coffee makes it easy to publish free and exclusive content. Try different</p>
+            <p className='text-lg'>formats such as audio, and make it members-only to drive more memberships. </p>
+          </div>  
+      </CardSpotlight>
+
+      <CardSpotlight>
         <div className='text-sm text-gray-200 flex flex-col justify-center text-center '>
           <p className='text-sm'>SHOP</p>
           <h2 className='text-5xl font-bold' >Introducing Shop,</h2>
@@ -50,7 +51,7 @@ export default function Home() {
           <p className='text-lg'>designed from the ground up with creators in mind. Whether it’s a 1-1 Zoom call, art</p>
           <p className='text-lg'>commissions, or an ebook, Shop is for you.</p>
         </div>
-      } />
+      </CardSpotlight>
     </div>
     </div>
   );

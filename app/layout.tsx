@@ -1,10 +1,9 @@
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import SessionWrapper from "@/components/SessionWrapper";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
-import SessionWrapper from "@/components/SessionWrapper";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

@@ -1,7 +1,7 @@
 "use client"
-import React, { use, useState } from 'react'
-import Link from 'next/link'
-import { useSession, signIn, signOut } from "next-auth/react"; 
+import { signOut, useSession } from "next-auth/react";
+import Link from 'next/link';
+import { useState } from 'react';
 
 
 const Navbar = () => {
