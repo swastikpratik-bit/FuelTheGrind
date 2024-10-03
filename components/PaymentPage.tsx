@@ -5,7 +5,6 @@ import Razorpay from 'razorpay'
 import React, { useState } from 'react'
 
 import { useSession } from 'next-auth/react'
-import Image from 'next/image'
 
 
 
