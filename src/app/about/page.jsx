@@ -2,6 +2,8 @@ import Link from 'next/link';
 import React from 'react';
 
 function About() {
+  console.log(process.env.NEXTAUTH_SECRET);
+
   return (
     <div className="w-full bg-gray-900 text-gray-100">
       {/* Hero Section */}
