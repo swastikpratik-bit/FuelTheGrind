@@ -1,7 +1,9 @@
 import CardSpotlight from "@/components/ui/CardSpotlight";
 import Link from "next/link";
 
-export default function Home() {  
+export default function Home() { 
+  
+  console.log(process.env.NEXTAUTH_SECRET);
   return (
     <div className=" flex flex-col justify-center items-center ">
       
