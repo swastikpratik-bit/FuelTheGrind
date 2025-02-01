@@ -9,8 +9,7 @@ export const POST = async (req) => {
 
     let body = await req.formData()
     body = Object.fromEntries(body)
-    console.log(body)
-
+    
     let curPayment = await Payments.findOne({oid: body.razorpay_order_id})
 
     if(!curPayment){
