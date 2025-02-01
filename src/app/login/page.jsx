@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 const Login = () => {
+
+    console.log(process.env.NEXTAUTH_SECRET);
     const {data : session } = useSession();
     const router = useRouter();
 
