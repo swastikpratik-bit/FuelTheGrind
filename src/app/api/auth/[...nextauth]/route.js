@@ -12,7 +12,7 @@ export const authoptions = NextAuth({
     }),
   ],
 
-  secret: process.env.NEXTAUTH_SECRET s,
+  secret: process.env.NEXTAUTH_SECRET,
 
   callbacks: {
     async signIn({ user, account }) {
