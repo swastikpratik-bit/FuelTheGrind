@@ -99,10 +99,11 @@ const PaymentPage = ({ username }) => {
 
             <div className='flex flex-col justify-center items-center w-full'>
                 <div className='cover w-full bg-red-50 relative'>
-                    <img className='object-cover w-full h-48 md:h-[350px] shadow-slate-900 shadow-sm' src={currentUser.coverImage} alt="" />
-                    <div className='absolute -bottom-20 right-[33%] md:right-[46%] border-white overflow-hidden border-2 rounded-full size-36'>
-                        <img className='rounded-full object-cover size-36' width={128} height={128} src={currentUser.profilePicture} alt="" />
-                    </div>
+                    <img className='object-cover w-full h-28 md:h-[350px] shadow-slate-900 shadow-sm' src={currentUser.coverImage} alt="" />
+                    <div className='absolute -bottom-20 right-[37%] sm:right-[40%] md:right-[45%] lg:right-[46%] border-white overflow-hidden border-2 rounded-full size-24 sm:size-28 md:size-32 lg:size-36'>
+    <img className='rounded-full object-cover size-24 sm:size-28 md:size-32 lg:size-36' width={128} height={128} src={currentUser.profilePicture} alt="" />
+</div>
+
                 </div>
                 <div className="info flex justify-center items-center my-24 mb-32 flex-col gap-2 w-full">
                     <div className='font-bold text-lg'>
@@ -117,10 +118,10 @@ const PaymentPage = ({ username }) => {
                         {payments.length} Payments .   ₹{payments.reduce((a, b) => a + b.amount, 0)} raised
                     </div>
 
-                    <div className="payment flex gap-3 w-[80%] mt-11 flex-col md:flex-row">
+                    <div className="payment flex gap-3 w-[90%] mt-11 flex-col md:flex-row">
                         <div className="supporters w-full md:w-1/2 bg-slate-900 rounded-lg text-white px-2 md:p-10">
                             {/* Show list of all the supporters as a leaderboard  */}
-                            <h2 className='text-2xl font-bold my-5'> Top Supporters</h2>
+                            <h2 className='text-center md:text-left lg:text-left text-2xl font-bold my-5'> Top Supporters</h2>
                             <ul className='mx-5 text-lg'>
                                 {payments.length == 0 && <li>No payments yet</li>}
                                 {payments.slice(0, 7).map((p, i) => {
@@ -148,7 +149,7 @@ const PaymentPage = ({ username }) => {
                                 <input onChange={handleChange} value={paymentform.amount} name="amount" type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter Amount' />
 
 
-                                <button onClick={() => pay(Number.parseInt(paymentform.amount) * 100)} type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4   focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800  disabled:cursor-not-allowed" disabled={paymentform.name?.length < 3 || paymentform.message?.length < 4 || paymentform.amount?.length < 1 }>
+                                <button onClick={() => pay(Number.parseInt(paymentform.amount) * 100)} type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 mb-6 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800  disabled:cursor-not-allowed" disabled={paymentform.name?.length < 3 || paymentform.message?.length < 4 || paymentform.amount?.length < 1 }>
                                     Pay
                                     <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2 text-center items-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />

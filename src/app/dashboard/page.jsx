@@ -1,7 +1,7 @@
 import Dashboard from '@/components/Dashboard';
 const Page = () => {
   return (
-    <div className='w-full'>
+    <div className='w-[90vw] md:w-full'>
       <Dashboard/>
     </div>
   )
