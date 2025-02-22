@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fuel The Grind
 
-## Getting Started
 
-First, run the development server:
+
+Fuel The Grind is a platform  designed to help creators and developers receive financial support from their audience effortlessly.
+
+## 🚀 Features
+
+- **Creator Profiles** - Showcase your work and let supporters contribute.
+- **Seamless Payments** - Secure and quick transactions with multiple payment options.
+- **Custom Support Amounts** - Let supporters choose how much they want to contribute.
+- **Authentication with NextAuth** - Secure login with GitHub and other providers.
+
+
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js, React, Tailwind CSS
+- **Backend:** Next.js API Routes
+- **Authentication:** NextAuth.js
+- **Payments:** Razorpay (Planned integration)
+- **Database:** MongoDB&#x20;
+
+
+
+### **Try Dummy use**r : [https://fuelthegrind.vercel.app/swastiksingh368](https://fuelthegrind.vercel.app/swastiksingh368)
+
+### For **Payment** use Test upi : *test\@razorpay*
+
+
+
+### 1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/swastikpratik-bit/FuelTheGrind.git
+cd FuelTheGrind
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm install  # or yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Set up environment variables:
 
-## Learn More
+Create a `.env.local` file and add the required environment variables.
 
-To learn more about Next.js, take a look at the following resources:
+```ini
+NEXTAUTH_URL=your_next_auth_url
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Run the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run dev  # or yarn dev
+```
 
-## Deploy on Vercel
+The app will be available at `http://localhost:3000`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📌 Roadmap
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-
+
+## 🤝 Contributing
+
+We welcome contributions! Feel free to fork the repo, create a branch, and submit a pull request.
+
+## 📬 Contact
+
+For any queries or suggestions, feel free to reach out:
+
+- **GitHub**: [@swastikpratik-bit](https://github.com/swastikpratik-bit)
+- **Email**: [swastiksingh368@gmail.com](mailto\:swastiksingh368@gmail.com)
+- **Instagram**: [https://www.instagram.com/swastiklonewolf/](https://www.instagram.com/swastiklonewolf/)
+
+---
+
+💙 Built with passion by Swastik Pratik
+
